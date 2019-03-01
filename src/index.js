@@ -2,7 +2,7 @@
 module.exports = function makeExchange(currency) {
 
   let answer = {};
-  
+
   if (currency > 10000){
     answer["error"]="You are rich, my friend! We don't have so much coins for exchange";
   }
@@ -12,22 +12,22 @@ module.exports = function makeExchange(currency) {
 
      
    if(Math.ceil(currency/50) >0){
-    answer["H"] = Math.ceil(currency/50);
+    answer["H"] = Math.floor(currency/50);
    currency = currency%50;
   }
    
   if(Math.ceil(currency/25)>0){
-    answer["Q"] = Math.round(currency/25);
+    answer["Q"] = Math.floor(currency/25);
     currency = currency%25;
   }
   
     if(Math.ceil(currency/10)>0){
-    answer["D"] = Math.round(currency/10);
+    answer["D"] = Math.floor(currency/10);
     currency = currency%10;
   }
   
     if(Math.ceil(currency/5)>0){
-    answer["D"] = Math.round(currency/5);
+    answer["D"] = Math.floor(currency/5);
     currency = currency%5;
   }
   
